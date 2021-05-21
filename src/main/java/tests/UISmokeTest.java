@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 public class UISmokeTest extends UITestBase {
 
-   // @Test
+    @Test
     public void verify_trello_homepage_is_displayed() {
         home().open();
         boolean homePageIsDisplayed = home().verifyPage();
