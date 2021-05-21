@@ -3,12 +3,12 @@
 <suite name="Test Suites">
 
     <listeners>
-        <listener class-name="utility.ITestExecutionListener"/>
+        <listener class-name="com.epam.reportportal.testng.ReportPortalTestNGListener"/>
     </listeners>
 
     <test name="Smoke">
         <classes>
-            <class name="tests.SomeTests"/>
+            <class name="tests.UISmokeTest"/>
         </classes>
     </test>
 </suite>

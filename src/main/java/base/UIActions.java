@@ -176,41 +176,24 @@ public class UIActions {
     }
 
     protected void write(By locator, String text) {
-        try {
-            WebElement input = waits.until(ExpectedConditions.visibilityOfElementLocated(locator));
-            highlight(input);
-            input.sendKeys(text);
-        } catch (Exception e) {
-            System.out.println("====CLICK ERROR========================");
-            System.out.println("Where   :  " + driver.getCurrentUrl());
-            System.out.println("Element :  " + locator.toString());
-            System.out.println("=======================================");
-        }
+
+        WebElement input = waits.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        highlight(input);
+        input.sendKeys(text);
+
     }
 
     protected void clearThenWrite(By locator, String text) {
-        try {
-            WebElement input = waits.until(ExpectedConditions.visibilityOfElementLocated(locator));
-            input.clear();
-            input.sendKeys(text);
-        } catch (Exception e) {
-            System.out.println("====CLICK ERROR========================");
-            System.out.println("Where   :  " + driver.getCurrentUrl());
-            System.out.println("Element :  " + locator.toString());
-            System.out.println("=======================================");
-        }
+
+        WebElement input = waits.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        input.clear();
+        input.sendKeys(text);
+
     }
 
     protected void clear(By locator) {
-        try {
-            WebElement input = waits.until(ExpectedConditions.visibilityOfElementLocated(locator));
-            input.clear();
-        } catch (Exception e) {
-            System.out.println("====CLICK ERROR========================");
-            System.out.println("Where   :  " + driver.getCurrentUrl());
-            System.out.println("Element :  " + locator.toString());
-            System.out.println("=======================================");
-        }
+        WebElement input = waits.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        input.clear();
     }
 
     protected String getText(By locator) {
@@ -219,52 +202,31 @@ public class UIActions {
     }
 
     protected boolean elementIsVisible(By locator) {
-        try {
-            WebElement element = waits.until(ExpectedConditions.visibilityOfElementLocated(locator));
-            highlight(element);
-            return element.isDisplayed();  // true, false
-        } catch (Exception e) {
-            System.out.println("====Element Visibility ERROR========================");
-            System.out.println("Where   :  " + driver.getCurrentUrl());
-            System.out.println("Determining the element visibility has failed.");
-            System.out.println("=======================================");
-        }
-        return false;
+
+        WebElement element = waits.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        highlight(element);
+        return element.isDisplayed();  // true, false
     }
 
     protected boolean elementIsPresent(By locator) {
-        try {
-            WebElement element = waits.until(ExpectedConditions.presenceOfElementLocated(locator));
-            return true;
-        } catch (TimeoutException te) {
-            return false;
-        }
+
+        WebElement element = waits.until(ExpectedConditions.presenceOfElementLocated(locator));
+        return true;
+
     }
 
     protected boolean elementIsEnabled(By locator) {
-        try {
-            WebElement element = waits.until(ExpectedConditions.visibilityOfElementLocated(locator));
-            return element.isEnabled();
-        } catch (Exception e) {
-            System.out.println("====Element Enablement ERROR========================");
-            System.out.println("Where   :  " + driver.getCurrentUrl());
-            System.out.println("Determining the element's enablement has failed.");
-            System.out.println("=======================================");
-        }
-        return false;
+
+        WebElement element = waits.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        return element.isEnabled();
+
     }
 
     protected boolean elementIsSelected(By locator) {
-        try {
-            WebElement element = waits.until(ExpectedConditions.visibilityOfElementLocated(locator));
-            return element.isSelected();
-        } catch (Exception e) {
-            System.out.println("====Element SELECTED ERROR========================");
-            System.out.println("Where   :  " + driver.getCurrentUrl());
-            System.out.println("Determining the element's enablement has failed.");
-            System.out.println("=======================================");
-        }
-        return false;
+
+        WebElement element = waits.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        return element.isSelected();
+
     }
     //endregion
 
